@@ -13,6 +13,7 @@
     --black: #000000;
     --hover-color: #e8ffb7;
     --border-color: #529faf;
+    --gradient: linear-gradient(to bottom, #b6bfc8, #a09fb2);
 }
 
 @theme inline {
@@ -20,6 +21,7 @@
     --color-foreground: var(--foreground);
     --color-tertiary: var(--tertiary);
     --colorblue: var(--blue);
+    --colordarkgrey: var(--dark-grey);
     --color-yellow: var(--yellow);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
