@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
+    --off-white: #dae4ee;
+    --light-grey: #a09fb2;
+    --medium-grey: #b6bfc8;
+    --dark-grey: #a09fb2;
+    --yellow: #e8ffb7;
+    --blue: #76e5fc;
+    --red: #c62e65;
+    --black: #000000;
+    --hover-color: #e8ffb7;
+    --border-color: #529faf;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-tertiary: var(--tertiary);
+    --colorblue: var(--blue);
+    --color-yellow: var(--yellow);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #a09fb2;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--light-grey);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pillbutton {
+    @apply font-[700] text-black text-sm px-14 py-2 rounded-3xl border border-[var(--border-color)] cursor-pointer;
+    font-family: var(--font-space-mono);
+    background-color: var(--blue);
 }
