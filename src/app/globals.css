@@ -21,6 +21,9 @@
     --color-foreground: var(--foreground);
     --color-tertiary: var(--tertiary);
     --colorblue: var(--blue);
+    --coloroffwhite: var(--off-white);
+    --colorlightgrey: var(--light-grey);
+    --colormediumgrey: var(--medium-grey);
     --colordarkgrey: var(--dark-grey);
     --color-yellow: var(--yellow);
     --font-sans: var(--font-geist-sans);

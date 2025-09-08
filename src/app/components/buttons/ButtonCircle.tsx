@@ -9,7 +9,6 @@ import { BsPencilSquare } from "react-icons/bs";
 
 interface Props {
   id?: string;
-  label?: string;
 }
 
 const CircleButton = styled.button`
@@ -28,7 +27,7 @@ const CircleButton = styled.button`
   cursor: pointer;
 `;
 
-const ButtonCircle = ({ id, label = "SEND" }: Props) => {
+const ButtonCircle = ({ id }: Props) => {
   const localId = id;
   const { isActive, setActiveButton } = useButtonState();
 
