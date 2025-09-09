@@ -1,17 +1,16 @@
-"use client";
-import MainNav from "@/app/components/MainNav";
-import MonitorDB from "@/app/components/MonitorDB";
-import WriteEmail from "@/app/components/WriteEmail";
-import { useButtonState } from "@/lib/store";
+import { redirect } from "next/navigation";
+import { createClient } from "@/utils/supabase/server";
+import AdminHome from "@/app/admin/AdminHome";
 
-export default function Home() {
-  const { isActive } = useButtonState();
+export default async function AdminPage() {
+  const supabase = await createClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
-  return (
-    <>
-      <MainNav />
-      {isActive === "btn2" && <MonitorDB />}
-      {isActive === "btn3" && <WriteEmail />}
-    </>
-  );
+  if (!session) {
+    redirect("/login");
+  }
+
+  return <AdminHome />;
 }

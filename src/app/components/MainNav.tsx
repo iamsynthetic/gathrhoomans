@@ -2,8 +2,9 @@
 // import { useState } from "react";
 import ButtonCircle from "@/app/components/buttons/ButtonCircle";
 import ProfileAvatar from "@/app/components/ProfileAvatar";
+import { signOut } from "@/app/actions/auth";
 import styled from "styled-components";
-// import gsap from "gsap";
+import gsap from "gsap";
 
 const Logo = styled.button`
   font-family: var(--font-work-sans);
@@ -19,7 +20,36 @@ const UserName = styled.button`
   font-size: 1rem;
 `;
 
+const SignOutButton = styled.button`
+  font-family: var(--font-space-mono);
+  font-weight: 400;
+  color: black;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: justify-center;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  background-color: var(--blue);
+  cursor: pointer;
+`;
+
 const MainNav = () => {
+  const onHoverIn = () => {
+    gsap.to(`#signoutbtn`, {
+      backgroundColor: "#e8ffb7",
+      duration: 0.2,
+    });
+  };
+
+  const onHoverOut = () => {
+    gsap.to(`#signoutbtn`, {
+      backgroundColor: "#76e5fc",
+      duration: 0.2,
+    });
+  };
+
   return (
     <div className="w-full px-8 py-7">
       <div className="grid grid-cols-3 place-content-center">
@@ -42,6 +72,15 @@ const MainNav = () => {
         <div className="h-10 flex justify-end items-center">
           <UserName className="pr-6">Chris</UserName>
           <ProfileAvatar />
+          <form action={signOut} className="ml-6 h-10">
+            <SignOutButton
+              id="signoutbtn"
+              onMouseEnter={onHoverIn}
+              onMouseLeave={onHoverOut}
+            >
+              SIGN OUT
+            </SignOutButton>
+          </form>
         </div>
       </div>
     </div>
