@@ -1,3 +1,4 @@
+"use client";
 import { CiSearch } from "react-icons/ci";
 import styled from "styled-components";
 import gsap from "gsap";

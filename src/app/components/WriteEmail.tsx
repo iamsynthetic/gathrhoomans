@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 // import gsap from "gsap";
 

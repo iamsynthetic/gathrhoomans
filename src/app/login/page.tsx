@@ -1,8 +1,8 @@
 "use client";
+import { signIn } from "@/app/actions/auth";
+import { useEffect, useState, useActionState } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
-// import { useActionState } from 'react';
-import { useEffect, useState } from "react";
 
 const DIALOGBOX = styled.form`
   width: 26rem;
@@ -70,8 +70,25 @@ const LOGIN = styled.button`
   cursor: pointer;
 `;
 
+const ERRORMESSAGE = styled.div`
+  font-family: var(--font-space-mono);
+  font-weight: 800;
+  color: var(--red);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 1rem;
+`;
+
+async function signInAction(
+  prevState: { error: string } | null,
+  formData: FormData,
+) {
+  return await signIn(prevState, formData);
+}
+
 export default function Login() {
   const [isReady, setIsReady] = useState(false);
+  const [state, formAction] = useActionState(signInAction, null);
 
   const onHoverIn = () => {
     gsap.to(`#loginbtn`, {
@@ -100,8 +117,8 @@ export default function Login() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <DIALOGBOX>
+    <div className="flex flex-col justify-center items-center min-h-screen">
+      <DIALOGBOX action={formAction}>
         <TITLE>ADMIN LOGIN</TITLE>
         <div className="flex flex-col justify-center px-3">
           <LABEL>Email</LABEL>
@@ -131,8 +148,6 @@ export default function Login() {
             required
           />
         </div>
-
-        {/* error state */}
         <div className="flex justify-center">
           <LOGIN
             id="loginbtn"
@@ -144,6 +159,8 @@ export default function Login() {
           </LOGIN>
         </div>
       </DIALOGBOX>
+      {/* error state */}
+      {state?.error && <ERRORMESSAGE>{state.error}</ERRORMESSAGE>}
     </div>
   );
 }
