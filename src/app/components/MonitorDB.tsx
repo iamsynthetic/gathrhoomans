@@ -1,7 +1,8 @@
 "use client";
+import { useRsvpStore } from "@/lib/store";
 import { CiSearch } from "react-icons/ci";
 import styled from "styled-components";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 const SEARCHBAR = styled.div`
   width: 40rem;
@@ -53,44 +54,10 @@ const TABLE = styled.div`
   margin-top: 3.5rem;
 `;
 
-const categories = ["Category A", "Category B", "Category C", "Category D"];
-const items = [
-  ["Item A1", "Item B1", "Item C1", "Item D1"],
-  ["Item A2", "Item B2", "Item C2", "Item D2"],
-  ["Item A3", "Item B3", "Item C3", "Item D3"],
-  ["Item A4", "Item B4", "denied", "Item D4"],
-  ["Item A5", "Item B5", "Item C5", "Item D5"],
-  ["Item A6", "Item B6", "Item C6", "Item D6"],
-  ["Item A7", "Item B7", "Item C7", "Item D7"],
-  ["Item A8", "Item B8", "Item C8", "Item D8"],
-  ["Item A9", "Item B9", "Item C9", "Item D9"],
-  ["Item A10", "Item B10", "Item C10", "Item D10"],
-];
-
 const MonitorDB = () => {
-  const onHoverIn = (id?: string) => {
-    console.log("hover id is: " + id);
-    console.log("typeof id is: " + typeof id);
-    // if (isActive !== localId) {
-    gsap.to(`#${id}`, {
-      backgroundColor: "#dae4ee",
-      // opacity: 0,
-      duration: 0.2,
-    });
-    // }
-  };
-
-  const onHoverOut = (id?: string) => {
-    console.log("id" + id);
-    // alert("out id is: " + id);
-    // if (isActive !== localId) {
-    gsap.to(`#${id}`, {
-      backgroundColor: "transparent",
-      // opacity: 1,
-      duration: 0.2,
-    });
-    // }
-  };
+  const rsvps = useRsvpStore((s) => s.rsvps);
+  const rsvpcategories = useRsvpStore((s) => s.rsvpcategories);
+  console.log("RSVPs in component:", rsvps);
 
   return (
     <div
@@ -116,34 +83,21 @@ const MonitorDB = () => {
         <SUBTITLE className="font-[700]">PUB DEV PIT II</SUBTITLE>
         <SUBTITLE className="font-[400]">September 18, 2025</SUBTITLE>
       </div>
-
       <TABLE>
         <div className="flex border-b border-transparent">
-          {categories.map((cat, idx) => (
-            <div key={idx} className="flex-1 px-4 font-semibold">
-              {cat}
+          {rsvpcategories.map((rsvpcategory, index) => (
+            <div key={index} className="flex-1 px-4 font-semibold">
+              {rsvpcategory}
             </div>
           ))}
         </div>
         <hr className="border-t-1 border-white mt-2 mb-4 mx-4" />
-        <div className="space-y-3">
-          {items.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              id={`row-${rowIndex}`}
-              className="flex rounded-2xl py-1 cursor-pointer"
-              onMouseEnter={() => onHoverIn(`row-${rowIndex}`)}
-              onMouseLeave={() => onHoverOut(`row-${rowIndex}`)}
-            >
-              {row.map((item, colIndex) => (
-                <div key={colIndex} className="flex-1 px-4">
-                  {item === "denied" ? (
-                    <span className="rounded-2xl px-3 py-1 ml-[-.5rem] bg-[var(--red)]">
-                      {item}
-                    </span>
-                  ) : (
-                    <span>{item}</span>
-                  )}
+        <div className="flex">
+          {rsvpcategories.map((category, colIndex) => (
+            <div key={colIndex} className="flex-1 px-4">
+              {rsvps.map((rsvp, rowIndex) => (
+                <div id={`row-${rowIndex}`} key={rowIndex} className="py-1">
+                  {rsvp[category as keyof typeof rsvp]}
                 </div>
               ))}
             </div>

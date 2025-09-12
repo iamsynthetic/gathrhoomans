@@ -4,18 +4,28 @@ import gsap from "gsap";
 
 interface Props {
   label?: string;
+  paddingx?: string;
+  bgcolor?: string;
+  fontsize?: string;
+  loading?: boolean;
 }
 
-const PillButton = styled.button`
+const PillButton = styled.button<Props>`
   font-family: var(--font-space-mono);
-  font-weight: 700;
+  font-weight: 400;
   color: black;
-  font-size: 0.875rem;
-  background-color: #76e5fc;
-  border: 1px solid var(--border-color);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  width: 14rem;
+  font-size: ${({ fontsize }) => fontsize};
+  display: flex;
+  flex-direction: justify-center;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: ${({ paddingx }) => paddingx};
+  padding-right: ${({ paddingx }) => paddingx};
+  background-color: ${({ bgcolor }) => bgcolor};
+  margin-top: 0.5rem;
+  /*background-color: var(--blue);*/
   cursor: pointer;
 `;
 
@@ -33,11 +43,21 @@ const onHoverOut = () => {
   });
 };
 
-const ButtonPill = ({ label = "SEND" }: Props) => {
+const ButtonPill = ({
+  label = "SEND",
+  paddingx = "px-2",
+  bgcolor = "var(--blue)",
+  fontsize = ".75rem",
+  loading = false,
+}: Props) => {
   return (
     <>
       <PillButton
         id="button1"
+        paddingx={paddingx}
+        bgcolor={bgcolor}
+        fontsize={fontsize}
+        disabled={loading}
         onMouseEnter={onHoverIn}
         onMouseLeave={onHoverOut}
       >
