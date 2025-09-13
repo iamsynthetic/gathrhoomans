@@ -159,7 +159,6 @@ export default function Login() {
           </LOGIN>
         </div>
       </DIALOGBOX>
-      {/* error state */}
       {state?.error && <ERRORMESSAGE>{state.error}</ERRORMESSAGE>}
     </div>
   );

@@ -33,7 +33,7 @@ export default function ConfirmAttending({ action }: Props) {
           alt="save the date pub dev pit - hero image with a pig"
         />
       </div>
-      <h1>Ah sorry you can't make it :(</h1>
+      <h1>Ah sorry you can&apos;t make it :(</h1>
       <p>Maybe next time.</p>
     </div>
   );

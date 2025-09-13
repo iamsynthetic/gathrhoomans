@@ -1,10 +1,8 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
-// import { useSharedValue } from '@/lib/store';
 import styled from "styled-components";
 import ButtonPill from "@/app/components/buttons/ButtonPill";
-// import gsap from "gsap";
 //
 
 const TITLE = styled.div`
@@ -29,12 +27,6 @@ const EMAILINPUT = styled.input`
   border: none;
   outline: none;
   font-size: 1rem;
-  /*padding: 0rem 0rem 0rem 0.5rem;
-  width: 100%;
-  height: 12.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;*/
 `;
 
 const EMAILMESSAGE = styled.textarea`
@@ -44,14 +36,6 @@ const EMAILMESSAGE = styled.textarea`
   border: none;
   outline: none;
   font-size: 1rem;
-  /*border-none outline-hidden*/
-  /*font-size: 1rem;
-  padding: 0rem 0rem 0rem 0.5rem;
-  width: 40rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;*/
 `;
 
 interface EmailData {
@@ -149,11 +133,7 @@ const WriteEmail = () => {
         throw new Error(message);
       }
 
-      // const resBody = await response.json();
-      // console.log("Email sent:", resBody);
       router.refresh();
-      // } catch (error) {
-      // const message = error instanceof Error ? error.message : String(error);
     } finally {
       setLoading(false);
     }

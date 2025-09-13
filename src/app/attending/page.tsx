@@ -21,7 +21,6 @@ export default async function Attending({
     .eq("token", token)
     .single();
 
-  console.log("Supabase data:", data);
   console.log("Supabase error:", error);
 
   if (!data) {

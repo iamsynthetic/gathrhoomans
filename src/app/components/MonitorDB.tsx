@@ -2,7 +2,6 @@
 import { useRsvpStore } from "@/lib/store";
 import { CiSearch } from "react-icons/ci";
 import styled from "styled-components";
-// import gsap from "gsap";
 
 const SEARCHBAR = styled.div`
   width: 40rem;
@@ -69,13 +68,7 @@ const MonitorDB = () => {
           <SEARCHICON>
             <CiSearch size="24" />
           </SEARCHICON>
-          <SEARCH
-            name="search"
-            type="text"
-            placeholder="Search"
-            // value={data.from}
-            // onChange={handleChange}
-          />
+          <SEARCH name="search" type="text" placeholder="Search" />
         </SEARCHBAR>
       </div>
       <div className="pt-8">

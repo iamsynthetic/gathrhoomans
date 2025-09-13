@@ -17,7 +17,6 @@ export default async function AdminPage() {
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.log("error fetching rsvp tokens: ", error);
     return <div>failed to load rsvps</div>;
   }
 
