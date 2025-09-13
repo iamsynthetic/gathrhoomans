@@ -5,11 +5,6 @@ interface ButtonState {
   setActiveButton: (id: string) => void;
 }
 
-interface sharedValueState {
-  sharedValue: string;
-  setSharedValue: (value: string) => void;
-}
-
 export interface rsvpToken {
   id?: string;
   name?: string;
@@ -33,9 +28,4 @@ export const useRsvpStore = create<rsvpStore>()((set) => ({
   rsvps: [],
   rsvpcategories: ["email", "action", "created_at"],
   setRsvps: (rsvps) => set({ rsvps }),
-}));
-
-export const useSharedValue = create<sharedValueState>()((set) => ({
-  sharedValue: "",
-  setSharedValue: (value: string) => set({ sharedValue: value }),
 }));

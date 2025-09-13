@@ -1,5 +1,3 @@
-// "use server";
-
 import EmailTemplate from "@/app/components/reactemail/email";
 import { Resend } from "resend";
 import { NextRequest } from "next/server";
@@ -35,7 +33,7 @@ interface Props {
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
 );
 
 export async function send(request: NextRequest): Promise<Response> {
@@ -49,7 +47,7 @@ export async function send(request: NextRequest): Promise<Response> {
     console.error("Invalid JSON body:", error);
     return new Response(
       JSON.stringify({ success: false, message: "Invalid request body" }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
+      { status: 400, headers: { "Content-Type": "application/json" } },
     );
   }
 
@@ -73,7 +71,7 @@ export async function send(request: NextRequest): Promise<Response> {
   if (!from || !to || !subject || !content) {
     return new Response(
       JSON.stringify({ success: false, message: "Missing required fields" }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
+      { status: 400, headers: { "Content-Type": "application/json" } },
     );
   }
 
@@ -82,30 +80,25 @@ export async function send(request: NextRequest): Promise<Response> {
   let denyUrl: string | undefined;
   let token: string | undefined;
 
-  // Only generate token if sending to a single email address
-  // if (typeof to === "string" && to) {
   if (Array.isArray(to) && to.length === 1) {
     token = randomUUID();
     console.log("token is: " + token);
 
-    // const email = to[0]; // single email address
-
-    // Insert token into Supabase
     const { error: supabaseError } = await supabase.from("rsvp_tokens").insert({
-      email: to[0], // if using array
+      email: to[0],
       token,
       action: null,
       used: false,
     });
 
     if (supabaseError) {
-      console.error("Supabase insert error:", supabaseError); // This shows details
+      console.error("Supabase insert error:", supabaseError);
       return new Response(
         JSON.stringify({
           success: false,
           message: "Database error: " + supabaseError.message,
         }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
+        { status: 500, headers: { "Content-Type": "application/json" } },
       );
     }
 
@@ -141,7 +134,7 @@ export async function send(request: NextRequest): Promise<Response> {
       console.error("Resend error:", error);
       return new Response(
         JSON.stringify({ success: false, message: error.message }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
+        { status: 500, headers: { "Content-Type": "application/json" } },
       );
     }
 
@@ -150,8 +143,6 @@ export async function send(request: NextRequest): Promise<Response> {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error: unknown) {
-    console.error("Unexpected error:", error);
-
     let message = "Unknown error";
 
     if (error instanceof Error) {
@@ -163,7 +154,7 @@ export async function send(request: NextRequest): Promise<Response> {
         success: false,
         message,
       }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: { "Content-Type": "application/json" } },
     );
   }
 }

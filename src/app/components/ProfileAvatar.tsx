@@ -1,7 +1,5 @@
-// "use client";
 import Image from "next/image";
 import styled from "styled-components";
-// import gsap from "gsap";
 
 const CircleAvatar = styled.button`
   font-family: var(--font-space-mono);
@@ -9,8 +7,6 @@ const CircleAvatar = styled.button`
   color: black;
   font-size: 0.875rem;
   background-color: #b6bfc8;
-  /*border: 1px solid var(--border-color);*/
-  /*padding: 0.5rem;*/
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
@@ -20,12 +16,7 @@ const CircleAvatar = styled.button`
 const ProfileAvatar = () => {
   return (
     <>
-      <CircleAvatar
-        // id={id}
-        // onMouseEnter={() => onHoverIn(id)}
-        // onMouseLeave={() => onHoverOut(id)}
-        onClick={() => {}}
-      >
+      <CircleAvatar onClick={() => {}}>
         <Image
           src="/profile-image.png"
           alt="profile picture"
