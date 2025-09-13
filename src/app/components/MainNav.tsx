@@ -43,7 +43,11 @@ const MainNav = () => {
           <UserName className="pr-6">Chris</UserName>
           <ProfileAvatar />
           <form action={signOut} className="ml-6 h-10">
-            <ButtonPill label="SIGN OUT" paddingx=".5rem" fontsize=".625rem" />
+            <ButtonPill
+              label="SIGN OUT"
+              paddingx=".5rem"
+              thefontsize=".625rem"
+            />
           </form>
         </div>
       </div>

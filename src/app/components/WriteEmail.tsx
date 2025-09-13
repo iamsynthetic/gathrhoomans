@@ -268,7 +268,7 @@ const WriteEmail = () => {
             <ButtonPill
               label={loading ? "Loading..." : "SEND"}
               paddingx="2rem"
-              fontsize=".85rem"
+              thefontsize=".85rem"
               loading={loading}
               bgcolor={loading ? "var(--coloroffwhite)" : "var(--blue)"}
             />

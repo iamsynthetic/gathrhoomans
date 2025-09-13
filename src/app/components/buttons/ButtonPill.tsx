@@ -6,7 +6,7 @@ interface Props {
   label?: string;
   paddingx?: string;
   bgcolor?: string;
-  fontsize?: string;
+  thefontsize?: string;
   loading?: boolean;
 }
 
@@ -14,7 +14,7 @@ const PillButton = styled.button<Props>`
   font-family: var(--font-space-mono);
   font-weight: 400;
   color: black;
-  font-size: ${({ fontsize }) => fontsize};
+  font-size: ${({ thefontsize }) => thefontsize};
   display: flex;
   flex-direction: justify-center;
   text-align: center;
@@ -47,7 +47,7 @@ const ButtonPill = ({
   label = "SEND",
   paddingx = "px-2",
   bgcolor = "var(--blue)",
-  fontsize = ".75rem",
+  thefontsize = ".75rem",
   loading = false,
 }: Props) => {
   return (
@@ -56,7 +56,7 @@ const ButtonPill = ({
         id="button1"
         paddingx={paddingx}
         bgcolor={bgcolor}
-        fontsize={fontsize}
+        thefontsize={thefontsize}
         disabled={loading}
         onMouseEnter={onHoverIn}
         onMouseLeave={onHoverOut}
