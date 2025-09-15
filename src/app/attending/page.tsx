@@ -2,14 +2,30 @@ import { createServiceClient } from "@/utils/supabase/service-client";
 import { notFound } from "next/navigation";
 import ConfirmAttending from "@/app/components/ConfirmAttending";
 
-export default async function Attending({
+// type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+// interface PageProps {
+//   searchParams?: {
+//     token?: string;
+//     action?: string;
+//   };
+// }
+
+// export default async function MyPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }>; }) {
+//   const sParams = await searchParams;
+//   // Now you can safely access properties from sParams, e.g., sParams.myQueryParam
+// }
+
+export default async function AttendingPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { token, action } = searchParams;
+  const sParams = await searchParams;
+  const token = sParams?.token;
+  const action = sParams?.action;
 
-  if (!token || !action || !["confirm", "deny"].includes(action)) {
+  if (!token || !action || !["confirm", "deny"].includes(action?.toString())) {
     return notFound();
   }
 
@@ -21,15 +37,15 @@ export default async function Attending({
     .eq("token", token)
     .single();
 
-  console.log("Supabase error:", error);
-
-  if (!data) {
-    return <div>theres no data here</div>;
+  if (!data || error) {
+    console.error("Supabase error:", error);
+    return <div>There’s no data here</div>;
   }
 
   await supabase
     .from("rsvp_tokens")
     .update({ used: true, action, used_at: new Date().toISOString() })
     .eq("id", data.id);
-  return <ConfirmAttending action={action} email={data.email} />;
+
+  return <ConfirmAttending action={action.toString()} email={data.email} />;
 }
