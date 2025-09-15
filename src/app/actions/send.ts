@@ -102,8 +102,8 @@ export async function send(request: NextRequest): Promise<Response> {
       );
     }
 
-    confirmUrl = `http://localhost:3000/attending?action=confirm&token=${token}`;
-    denyUrl = `http://localhost:3000/attending?action=deny&token=${token}`;
+    confirmUrl = `https://gathrhoomans.tomotsugu.me/attending?action=confirm&token=${token}`;
+    denyUrl = `https://gathrhoomans.tomotsugu.me/attending?action=deny&token=${token}`;
   }
 
   try {

@@ -2,20 +2,6 @@ import { createServiceClient } from "@/utils/supabase/service-client";
 import { notFound } from "next/navigation";
 import ConfirmAttending from "@/app/components/ConfirmAttending";
 
-// type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
-
-// interface PageProps {
-//   searchParams?: {
-//     token?: string;
-//     action?: string;
-//   };
-// }
-
-// export default async function MyPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }>; }) {
-//   const sParams = await searchParams;
-//   // Now you can safely access properties from sParams, e.g., sParams.myQueryParam
-// }
-
 export default async function AttendingPage({
   searchParams,
 }: {

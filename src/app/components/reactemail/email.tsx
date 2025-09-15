@@ -10,7 +10,6 @@ import {
   Tailwind,
 } from "@react-email/components";
 
-// import { Text } from "@react-email/text";
 import { Img } from "@react-email/img";
 import { Link } from "@react-email/link";
 

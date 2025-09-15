@@ -1,2 +1,1 @@
-[build.environment]
-  NEXT_PUBLIC_SUPABASE_URL = "https://orvjpyugpqrnevbwokxq.supabase.co"
+NEXT_PUBLIC_SUPABASE_URL = "https://orvjpyugpqrnevbwokxq.supabase.co"
