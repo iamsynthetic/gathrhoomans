@@ -388,33 +388,6 @@ const EmailTemplate = ({
                           </Link>
                         </Column>
                       </Row>
-                      <Row className="text-center text-[1rem]">
-                        <Column
-                          style={{
-                            paddingLeft: "80px",
-                            paddingRight: "80px",
-                            paddingTop: "60px",
-                            paddingBottom: "60px",
-                          }}
-                        >
-                          (Didn&apos;t like that Evite has a bunch of ads, so I
-                          build my own, let me know what you think.)
-                          <br />
-                          <span>
-                            <Link
-                              href="mailto:chris@tomotsugu.me"
-                              style={{
-                                display: "block",
-                                margin: "0 auto",
-                                color: "#803131",
-                                textDecoration: "underline",
-                              }}
-                            >
-                              chris@tomotsugu.me
-                            </Link>
-                          </span>
-                        </Column>
-                      </Row>
                       <Row>
                         <Column>
                           <Img
@@ -438,7 +411,21 @@ const EmailTemplate = ({
                           paddingBottom: "20px",
                           fontSize: ".75rem",
                         }}
-                      >
+                      ></Row>
+                      <Row className="text-center text-[1rem]">
+                        <Column
+                          style={{
+                            paddingLeft: "80px",
+                            paddingRight: "80px",
+                            paddingTop: "60px",
+                            paddingBottom: "60px",
+                          }}
+                        >
+                          Didn&apos;t like that Evite has a bunch of ads, so I
+                          built my own system, let me know what you think.
+                        </Column>
+                      </Row>
+                      <Row>
                         <Column
                           style={{
                             paddingLeft: "80px",
