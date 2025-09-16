@@ -388,6 +388,19 @@ const EmailTemplate = ({
                           </Link>
                         </Column>
                       </Row>
+                      <Row className="text-center text-[1rem]">
+                        <Column
+                          style={{
+                            paddingLeft: "80px",
+                            paddingRight: "80px",
+                            paddingTop: "60px",
+                            paddingBottom: "60px",
+                          }}
+                        >
+                          Didn&apos;t like that Evite has a bunch of ads, so I
+                          built my own system, let me know what you think.
+                        </Column>
+                      </Row>
                       <Row>
                         <Column>
                           <Img
@@ -411,21 +424,7 @@ const EmailTemplate = ({
                           paddingBottom: "20px",
                           fontSize: ".75rem",
                         }}
-                      ></Row>
-                      <Row className="text-center text-[1rem]">
-                        <Column
-                          style={{
-                            paddingLeft: "80px",
-                            paddingRight: "80px",
-                            paddingTop: "60px",
-                            paddingBottom: "60px",
-                          }}
-                        >
-                          Didn&apos;t like that Evite has a bunch of ads, so I
-                          built my own system, let me know what you think.
-                        </Column>
-                      </Row>
-                      <Row>
+                      >
                         <Column
                           style={{
                             paddingLeft: "80px",
