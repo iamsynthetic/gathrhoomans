@@ -27,7 +27,7 @@ interface Props {
 
 const EmailTemplate = ({
   // addImage = "",
-  welcomeMessage = "Canada's Fastest, No Wait...",
+  welcomeMessage = "Another Night of Debauchery!",
   // content = "hello world",
   // ctalabel,
   // ctaurl,
@@ -145,9 +145,6 @@ const EmailTemplate = ({
                           times of now, and times (of) new roman.
                           <br />
                           Little font humour for ya there.
-                          <br />
-                          (Didn&apos;t like that Evite has a bunch of ads, so I
-                          build my own, let me know what can be improved!)
                         </Column>
                       </Row>
                       <Row
@@ -313,7 +310,7 @@ const EmailTemplate = ({
                           style={{
                             paddingLeft: "80px",
                             paddingRight: "80px",
-                            paddingTop: "0px",
+                            paddingTop: "10px",
                             paddingBottom: "60px",
                           }}
                         >
@@ -334,6 +331,7 @@ const EmailTemplate = ({
                           </span>
                         </Column>
                       </Row>
+
                       <Row className="text-center text-[1rem]">
                         <Column
                           style={{
@@ -388,6 +386,33 @@ const EmailTemplate = ({
                               alt="image of a black button with the word no on it"
                             />
                           </Link>
+                        </Column>
+                      </Row>
+                      <Row className="text-center text-[1rem]">
+                        <Column
+                          style={{
+                            paddingLeft: "80px",
+                            paddingRight: "80px",
+                            paddingTop: "60px",
+                            paddingBottom: "60px",
+                          }}
+                        >
+                          (Didn&apos;t like that Evite has a bunch of ads, so I
+                          build my own, let me know what you think.)
+                          <br />
+                          <span>
+                            <Link
+                              href="mailto:chris@tomotsugu.me"
+                              style={{
+                                display: "block",
+                                margin: "0 auto",
+                                color: "#803131",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              chris@tomotsugu.me
+                            </Link>
+                          </span>
                         </Column>
                       </Row>
                       <Row>
