@@ -31,9 +31,9 @@ const EmailTemplate = ({
   // content = "hello world",
   // ctalabel,
   // ctaurl,
-  confirmbuttonalabel,
+  // confirmbuttonalabel,
   confirmbuttonurl,
-  denybuttonlabel,
+  // denybuttonlabel,
   denybuttonurl,
 }: Props) => {
   return (
@@ -139,6 +139,7 @@ const EmailTemplate = ({
                             paddingRight: "80px",
                             paddingTop: "0px",
                             paddingBottom: "20px",
+                            color: "white",
                           }}
                         >
                           Or maybe we&apos;ll just talk about times of old,
@@ -195,6 +196,7 @@ const EmailTemplate = ({
                             paddingRight: "80px",
                             paddingTop: "0px",
                             paddingBottom: "10px",
+                            color: "white",
                           }}
                         >
                           Petty Cash Social House 487 Adelaide St W
@@ -296,6 +298,7 @@ const EmailTemplate = ({
                             paddingRight: "80px",
                             paddingTop: "10px",
                             paddingBottom: "0px",
+                            color: "white",
                           }}
                         >
                           if you&apos;re checking street view,
@@ -312,6 +315,7 @@ const EmailTemplate = ({
                             paddingRight: "80px",
                             paddingTop: "10px",
                             paddingBottom: "60px",
+                            color: "white",
                           }}
                         >
                           Email or message me if you need anything
@@ -339,6 +343,7 @@ const EmailTemplate = ({
                             paddingRight: "80px",
                             paddingTop: "0px",
                             paddingBottom: "20px",
+                            color: "white",
                           }}
                         >
                           Will you be attending?
