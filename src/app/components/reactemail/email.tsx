@@ -141,13 +141,13 @@ const EmailTemplate = ({
                             paddingBottom: "20px",
                           }}
                         >
-                          Or maybe we’ll just talk about times of old, times of
-                          now, and times (of) new roman.
+                          Or maybe we&apos;ll just talk about times of old,
+                          times of now, and times (of) new roman.
                           <br />
                           Little font humour for ya there.
                           <br />
-                          (Didn't like that Evite has a bunch of ads, so I build
-                          my own, let me know what can be improved!)
+                          (Didn&apos;t like that Evite has a bunch of ads, so I
+                          build my own, let me know what can be improved!)
                         </Column>
                       </Row>
                       <Row
