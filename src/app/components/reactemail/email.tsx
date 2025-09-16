@@ -27,7 +27,7 @@ interface Props {
 
 const EmailTemplate = ({
   // addImage = "",
-  welcomeMessage = "Another Night of Debauchery!",
+  welcomeMessage = "Canada's Fastest, No Wait...",
   // content = "hello world",
   // ctalabel,
   // ctaurl,
@@ -142,8 +142,12 @@ const EmailTemplate = ({
                           }}
                         >
                           Or maybe we’ll just talk about times of old, times of
-                          now, and times (of) new roman. Little font humour for
-                          ya there.
+                          now, and times (of) new roman.
+                          <br />
+                          Little font humour for ya there.
+                          <br />
+                          (Didn't like that Evite has a bunch of ads, so I build
+                          my own, let me know what can be improved!)
                         </Column>
                       </Row>
                       <Row
@@ -299,8 +303,9 @@ const EmailTemplate = ({
                         >
                           if you&apos;re checking street view,
                           <br />
-                          go around the corner, you&apos;ll see the front of the
-                          place.
+                          go around the corner,
+                          <br />
+                          you&apos;ll see the front of the place.
                         </Column>
                       </Row>
                       <Row className="text-center text-[1rem]">
@@ -316,7 +321,7 @@ const EmailTemplate = ({
                           <br />
                           <span>
                             <Link
-                              href="mailto:chris@tomotsugu.com"
+                              href="mailto:chris@tomotsugu.me"
                               style={{
                                 display: "block",
                                 margin: "0 auto",
@@ -324,7 +329,7 @@ const EmailTemplate = ({
                                 textDecoration: "underline",
                               }}
                             >
-                              chris@tomotsugu.com
+                              chris@tomotsugu.me
                             </Link>
                           </span>
                         </Column>
@@ -432,9 +437,9 @@ const EmailTemplate = ({
                                 color: "#803131",
                                 textDecoration: "underline",
                               }}
-                              href="mailto:chris@tomotsugu.com"
+                              href="mailto:chris@tomotsugu.me"
                             >
-                              chris@tomotsugu.com
+                              chris@tomotsugu.me
                             </Link>
                           </span>
                         </Column>
