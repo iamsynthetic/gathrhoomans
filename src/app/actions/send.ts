@@ -126,7 +126,7 @@ export async function send(request: NextRequest): Promise<Response> {
         confirmbuttonalabel: "Confirm Attendance 123",
         confirmbuttonurl: confirmUrl,
         denybuttonlabel: `deny attendance ${token}`,
-        denybuttonurl: denyUrl,
+        denybuttonurl: `https://gathrhoomans.tomotsugu.me/attending?action=deny&token=${token}`,
       }),
     });
 

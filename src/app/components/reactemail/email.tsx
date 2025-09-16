@@ -375,10 +375,8 @@ const EmailTemplate = ({
                         <Column
                           style={{ paddingRight: ".5rem", cursor: "pointer" }}
                         >
-                          <p>confirmbuttonalabel is {confirmbuttonalabel}</p>
-                          <p>denybuttonlabel is {denybuttonlabel}</p>
-                          <p>deny button is: {denybuttonurl}</p>
-                          <Link href={String(denybuttonurl)}>
+                          <p>deny button v2 - is: {denybuttonurl}</p>
+                          <Link href={denybuttonurl}>
                             <Img
                               src="https://res.cloudinary.com/dca4atadh/image/upload/v1757604049/pubdevpit/btn-no.png"
                               width="119"
