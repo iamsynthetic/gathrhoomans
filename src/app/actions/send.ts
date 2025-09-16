@@ -123,9 +123,9 @@ export async function send(request: NextRequest): Promise<Response> {
         content: content!,
         ctalabel,
         ctaurl,
-        confirmbuttonalabel: "Confirm Attendance",
+        confirmbuttonalabel: "Confirm Attendance 123",
         confirmbuttonurl: confirmUrl,
-        denybuttonlabel: "Decline Attendance",
+        denybuttonlabel: `deny attendance ${token}`,
         denybuttonurl: denyUrl,
       }),
     });

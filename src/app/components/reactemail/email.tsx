@@ -31,9 +31,9 @@ const EmailTemplate = ({
   // content = "hello world",
   // ctalabel,
   // ctaurl,
-  // confirmbuttonalabel,
+  confirmbuttonalabel,
   confirmbuttonurl,
-  // denybuttonlabel,
+  denybuttonlabel,
   denybuttonurl,
 }: Props) => {
   return (
@@ -375,6 +375,8 @@ const EmailTemplate = ({
                         <Column
                           style={{ paddingRight: ".5rem", cursor: "pointer" }}
                         >
+                          <p>confirmbuttonalabel is {confirmbuttonalabel}</p>
+                          <p>denybuttonlabel is {denybuttonlabel}</p>
                           <p>deny button is: {denybuttonurl}</p>
                           <Link href={String(denybuttonurl)}>
                             <Img
